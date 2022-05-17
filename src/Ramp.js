@@ -10,23 +10,23 @@ export default function Ramp(props) {
     return (
       <div>
         <p>
-          <b>Date and time:</b> {date.toString()}
+          <b><i>Date and time:</i></b> <i>{date.toString()}</i>
         </p>
       </div>
     );
   } else if (Array.isArray(input)) {
     let divArray = [];
     for (let i = 0; i < input.length; i++) {
-      divArray.push(<div>{input[i]}</div>);
+      divArray.push(<div key={i}><p><i>{input[i]}</i></p></div>);
     }
     return (
       <div>
         <p>
           <i>
             <b>Values in the array:</b>
-            {divArray}
           </i>
         </p>
+        {divArray}
       </div>
     );
   } else {
